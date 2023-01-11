@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="floating-panel">
+        <div id="panel-content">
+          <!-- <div class="panel-header">
+            <h1><span class="payme">Payme</span><span class="pal">Pal</span></h1>
+          </div> -->
+          <div class="panel-body">
+              <div class="payment-options-container">
+                <div class="payment-option">
+                    <div class="logo-dip"><img class="logo2"src="https://cdn.discordapp.com/attachments/904526299933065249/1062798733349240832/paymepal_png.png" alt=""></div>
+                    <h3>Información de Pago</h3>
+                    <form>
+                    <div class="form-group">
+                        <label for="first-name">Nombre:</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="John"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Apellido:</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Doe"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Dirección:</label>
+                        <input type="text" class="form-control" id="address" placeholder="123 Main St"></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Dirección de correo electronico:</label>
+                        <input type="email" class="form-control" id="email-address" placeholder="cams@yahoo.com"></input>
+                    </div>
+                   
+                    <h3>Tarjeta de Credito</h3>
+                    <div class="form-group">
+                        <label for="card-number">Número de su tarjeta:</label>
+                        <input type="number" class="form-control" id="card-number" placeholder="1234 5678 9012 3456"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiration-date">Dia de expiración:</label>
+                        <input type="month" min="2021" max="2026" class="form-control" id="expiration-date" placeholder="MM/YY"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="csc">CSC:</label>
+                        <input type="number" class="form-control" id="csc" placeholder="123"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="donation-quantity">Cantidad de donación:</label>
+                        <input type="number" class="form-control" id="donation-quantity" placeholder="$"></input>
+                      </div>
+
+                            <button class="submit" id="submit-button" type="button">Submit</button>
+                        </form>
+                        <div id="overlay">
+                            <div id="thanks-message">
+                                <div class="header">
+                                  <img height="40px"src="https://cdn.discordapp.com/attachments/904526299933065249/1062798733349240832/paymepal_png.png" alt="Your logo">
+                                </div>
+                                <div class="body">
+                                  <img height="150px" class="checkmark"src="https://cdn.discordapp.com/attachments/904526299933065249/1062835770899058799/ezgif.com-gif-maker1.gif" alt="Checkmark">
+                                  <h1>You paid $<span class="donation-quantity-response"></span>.00 USD</h1>
+                                  <p>Gracias, <span class="first-name-response"></span> <span class="last-name-response"></span></p>
+                                  <p>Su numero de tarjeta: <span class="card-number-response"></span></p>
+                                  <p>Cantidad donda: $<span class="donation-quantity-response">.00 USD</span></p>
+                                  <p class="transaccion">Esta transaccion aparecera en tu estado de cuenta como PAYMEPAL "KTS".</p>
+                                </div>
+                                <div class="footer">
+                                  <div class="card-info">
+
+                                  </div>
+                                  <div class="transaction-info">
+
+                                  </div>
+                                  <div class="purchase-details">
+                                    <h2>Purchase details</h2>
+                                    <p class="purchase-details2">Le enviaremos la confirmacion a la direccion: <span class="first-name-response"></span> at the address: <span class="email-address-response">.</span> </p>
+                                </div>
+                                  <div class="merchant-details">
+                                    <h2>Merchant details</h2>
+                                    <p>KrazyToolSolutions@trollmail.gov</p>
+                                  </div>
+                                </div>
+                                <button id="close-thanks-button" class="submit">Close</button>
+                            </div>
+                        
+                    </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="panel-footer">
+            <div class="logos">
+                <div class="logo" id="logo1"></div>
+                <div class="logo" id="logo2"></div>
+                <div class="logo" id="logo3"></div>
+                <div class="logo" id="logo4"></div>
+                <div class="logo" id="logo5"></div>
+                <button id="close-button" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Close</button>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <script>document.getElementById("submit-button").addEventListener("click", function() {
+        document.getElementById("thanks-message").style.display = "flex";
+        document.getElementById("overlay").style.display = "block";
+    });
+    
+    document.getElementById("close-thanks-button").addEventListener("click", function(){
+        document.getElementById("thanks-message").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    });</script>
+      <script>
+    document.getElementById("submit-button").addEventListener("click", function() {
+  // Show the thanks message
+  document.getElementById("thanks-message").style.display = "flex";
+
+  // Get the user's input
+  var firstName = document.getElementById("first-name").value;
+  var lastName = document.getElementById("last-name").value;
+  var address = document.getElementById("address").value;
+  var cardNumber = document.getElementById("card-number").value;
+  var expirationDate = document.getElementById("expiration-date").value;
+  var csc = document.getElementById("csc").value;
+  var donation_quantity = document.getElementById("donation-quantity").value;
+  var email = document.getElementById("email-address").value;
+
+  // Populate the thank you message with the user's input
+  var firstNameResponse = document.querySelectorAll('.first-name-response');
+  for(var i = 0; i < firstNameResponse.length; i++){
+    firstNameResponse[i].textContent = firstName;
+  }
+
+  var lastNameResponse = document.querySelectorAll('.last-name-response');
+  for(var i = 0; i < lastNameResponse.length; i++){
+    lastNameResponse[i].textContent = lastName;
+  }
+
+  var addressResponse = document.querySelectorAll('.address-response');
+  for(var i = 0; i < addressResponse.length; i++){
+    addressResponse[i].textContent = address;
+  }
+
+  var cardNumberResponse = document.querySelectorAll('.card-number-response');
+  for(var i = 0; i < cardNumberResponse.length; i++){
+    cardNumberResponse[i].textContent = cardNumber;
+  }
+
+
+  var quantityNumberResponse = document.querySelectorAll('.donation-quantity-response');
+  for(var i = 0; i < quantityNumberResponse.length; i++){
+    quantityNumberResponse[i].textContent = donation_quantity;
+  }
+
+  var emailAddressResponse = document.querySelectorAll('.email-address-response');
+  for(var i = 0; i < emailAddressResponse.length; i++){
+    emailAddressResponse[i].textContent = email;
+  }
+});
+
+    </script>
+
+
+<script></script>
+</body>
+
+</html>
