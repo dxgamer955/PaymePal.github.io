@@ -42,7 +42,7 @@
                     <h3>Tarjeta de Credito</h3>
                     <div class="form-group">
                         <label for="card-number">Número de su tarjeta:</label>
-                        <input type="number" class="form-control" id="card-number" placeholder="1234 5678 9012 3456"></input>
+                        <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12" type="number" class="form-control" id="card-number" placeholder="1234 5678 9012 3456"></input>
                     </div>
                     <div class="form-group">
                         <label for="expiration-date">Dia de expiración:</label>
@@ -50,11 +50,11 @@
                     </div>
                     <div class="form-group">
                         <label for="csc">CSC:</label>
-                        <input type="number" class="form-control" id="csc" placeholder="123"></input>
+                        <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="3" class="form-control" id="csc" placeholder="123"></input>
                     </div>
                     <div class="form-group">
                         <label for="donation-quantity">Cantidad de donación:</label>
-                        <input type="number" class="form-control" id="donation-quantity" placeholder="$"></input>
+                        <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6" type="number" class="form-control" id="donation-quantity" placeholder="$"></input>
                       </div>
 
                             <button class="submit" id="submit-button" type="button">Submit</button>
